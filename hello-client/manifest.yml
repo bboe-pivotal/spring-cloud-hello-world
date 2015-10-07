@@ -1,0 +1,11 @@
+---
+applications:
+- name: hello-client
+  host: hello-client-${random-word}
+  memory: 1GB
+  instances: 1
+  path: target/hello-client-0.0.1-SNAPSHOT.jar
+  services:
+  - service-registry
+  - circuit-breaker
+  
