@@ -15,6 +15,6 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String sayHello(@RequestParam(value="name", defaultValue="World") String toWho) {
-        return String.format("%s %s!", greeting, toWho);
+        return String.format(greeting, toWho);
     }
 }
