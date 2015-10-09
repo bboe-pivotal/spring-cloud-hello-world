@@ -11,14 +11,13 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class HelloClientController {
-
-	@Autowired
-	SayHelloCommand sayHelloCommand;
+    @Autowired
+    SayHelloCommand sayHelloCommand;
 
     @RequestMapping("/hello")
     public HelloResponse sayHello(@RequestParam(value="id", defaultValue="0") Long id,
     								@RequestParam(value="name", defaultValue="World") String toWho) {
-    	String result = sayHelloCommand.sayHello(toWho);
-    	return new HelloResponse(id, result);
+        String result = sayHelloCommand.sayHello(toWho);
+        return new HelloResponse(id, result);
     }
 }
